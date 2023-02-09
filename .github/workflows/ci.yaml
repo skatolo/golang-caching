@@ -6,16 +6,16 @@ on:
 
 jobs:
   build:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-      with:
-        repository: "alexellis/registry-creds"
-    - name: Setup Golang
-      uses: actions/setup-go@v3
-      with:
-        go-version: ~1.19
-    - name: Build
-      run: |
-        CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} \
-        GO111MODULE=on go build -ldflags "-s -w -X main.Release=dev -X main.SHA=dev" -o /usr/bin/controller
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: "alexellis/registry-creds"
+      - name: Setup Golang
+        uses: actions/setup-go@v3
+        with:
+          go-version: ~1.19
+      - name: Build
+        run: |
+          CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} \
+          GO111MODULE=on go build -ldflags "-s -w -X main.Release=dev -X main.SHA=dev" -o /usr/bin/controller
