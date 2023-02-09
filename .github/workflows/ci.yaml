@@ -17,4 +17,4 @@ jobs:
       - name: Build
         run: |
           CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} \
-          GO111MODULE=on go build -ldflags "-s -w -X main.Release=dev -X main.SHA=dev" -o controller
+          GO111MODULE=on go build -ldflags "-s -w -X main.Release=dev -X main.SHA=dev" -a -o controller
