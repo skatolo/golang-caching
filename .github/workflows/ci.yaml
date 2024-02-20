@@ -22,7 +22,7 @@ jobs:
           accessKey: ${{ secrets.ACTIONS_CACHE_ACCESS_KEY }}
           secretKey: ${{ secrets.ACTIONS_CACHE_SECRET_KEY }}
           bucket: actuated-runners
-          use-fallback: true
+          use-fallback: false
           region: local
         
           path: |
